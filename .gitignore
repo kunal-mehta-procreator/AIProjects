@@ -1,0 +1,27 @@
+# Yii2 specific
+/runtime/*
+/web/assets/*
+/vendor/
+
+# IDE specific
+.idea/
+.vscode/
+*.swp
+*.swo
+
+# Environment specific
+.env
+.DS_Store
+
+# Docker specific
+docker-compose.override.yml
+
+# Composer
+composer.phar
+
+# Logs
+*.log
+
+# Keep directories but ignore contents
+!runtime/.gitkeep
+!web/assets/.gitkeep 

@@ -1,0 +1,138 @@
+/* Admin Navigation Styles */
+.admin-nav {
+    width: 280px;
+    height: 100vh;
+    background: #ffffff;
+    border-right: 1px solid #e0e0e0;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.05);
+}
+
+.admin-nav-header {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.admin-logo {
+    width: 32px;
+    height: 32px;
+}
+
+.admin-nav-header h1 {
+    font-size: 18px;
+    color: #333;
+    margin: 0;
+}
+
+.admin-nav-menu {
+    padding: 16px 0;
+    overflow-y: auto;
+}
+
+.nav-item {
+    position: relative;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 24px;
+    color: #555;
+    text-decoration: none;
+    transition: background-color 0.2s;
+    gap: 12px;
+}
+
+.nav-link:hover {
+    background-color: #f5f5f5;
+    color: #2196f3;
+}
+
+.nav-icon {
+    width: 20px;
+    height: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #666;
+}
+
+.nav-label {
+    flex: 1;
+    font-size: 14px;
+}
+
+.submenu-arrow {
+    width: 16px;
+    height: 16px;
+    position: relative;
+}
+
+.submenu-arrow::before {
+    content: '';
+    position: absolute;
+    right: 6px;
+    top: 50%;
+    width: 6px;
+    height: 6px;
+    border-right: 2px solid #666;
+    border-bottom: 2px solid #666;
+    transform: translateY(-50%) rotate(45deg);
+    transition: transform 0.2s;
+}
+
+.has-submenu.active .submenu-arrow::before {
+    transform: translateY(-50%) rotate(-135deg);
+}
+
+.submenu {
+    display: none;
+    background: #f8f9fa;
+    padding: 8px 0;
+}
+
+.has-submenu.active .submenu {
+    display: block;
+}
+
+.submenu-item {
+    display: block;
+    padding: 8px 24px 8px 56px;
+    color: #666;
+    text-decoration: none;
+    font-size: 14px;
+    transition: color 0.2s;
+}
+
+.submenu-item:hover {
+    color: #2196f3;
+}
+
+/* Icon styles */
+.nav-icon.dashboard::before {
+    content: '📊';
+}
+
+.nav-icon.organization::before {
+    content: '🏢';
+}
+
+.nav-icon.users::before {
+    content: '👥';
+}
+
+.nav-icon.activity::before {
+    content: '📝';
+}
+
+.nav-icon.download::before {
+    content: '⬇️';
+}
+
+.nav-icon.settings::before {
+    content: '⚙️';
+} 

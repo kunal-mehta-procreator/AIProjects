@@ -1,0 +1,21 @@
+version: '3'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:80"
+    volumes:
+      - ./:/var/www/html
+      - /var/www/html/vendor/
+      - /var/www/html/runtime/
+      - /var/www/html/web/assets/
+    environment:
+      - YII_DEBUG=true
+      - YII_ENV=dev
+      - PHP_ERROR_REPORTING=E_ALL
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost/admin/dashboard"]
+      interval: 30s
+      timeout: 10s
+      retries: 3 

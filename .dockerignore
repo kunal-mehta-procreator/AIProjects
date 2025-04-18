@@ -1,0 +1,13 @@
+.git
+.gitignore
+.env
+.env.*
+.idea
+.vscode
+vendor/
+runtime/*
+web/assets/*
+docker-compose.yml
+Dockerfile
+README.md
+*.log 

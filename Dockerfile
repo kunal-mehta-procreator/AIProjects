@@ -1,0 +1,54 @@
+FROM php:8.2-apache
+
+# Install system dependencies
+RUN apt-get update && apt-get install -y \
+    git \
+    curl \
+    libpng-dev \
+    libonig-dev \
+    libxml2-dev \
+    zip \
+    unzip
+
+# Clear cache
+RUN apt-get clean && rm -rf /var/lib/apt/lists/*
+
+# Install PHP extensions
+RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd intl
+
+# Install Composer
+COPY --from=composer:latest /usr/bin/composer /usr/bin/composer
+
+# Enable Apache mod_rewrite
+RUN a2enmod rewrite
+
+# Set working directory
+WORKDIR /var/www/html
+
+# Copy composer.json
+COPY composer.json .
+
+# Install dependencies
+RUN composer install --no-scripts --no-autoloader
+
+# Copy the rest of the application
+COPY . .
+
+# Generate autoloader and run scripts
+RUN composer dump-autoload --optimize
+
+# Set permissions
+RUN chown -R www-data:www-data /var/www/html \
+    && chmod -R 755 /var/www/html/runtime \
+    && chmod -R 755 /var/www/html/web/assets
+
+# Configure Apache DocumentRoot
+RUN sed -i 's!/var/www/html!/var/www/html/web!g' /etc/apache2/sites-available/000-default.conf
+
+# Create required directories
+RUN mkdir -p runtime web/assets \
+    && chmod -R 777 runtime \
+    && chmod -R 777 web/assets
+
+# Expose port 80
+EXPOSE 80 
