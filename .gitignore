@@ -1,10 +1,50 @@
+# phpstorm project files
+.idea
+
+# netbeans project files
+nbproject
+
+# zend studio for eclipse project files
+.buildpath
+.project
+.settings
+
+# windows thumbnail cache
+Thumbs.db
+
+# composer vendor dir
+/vendor
+
+# composer itself is not needed
+composer.phar
+
+# Mac DS_Store Files
+.DS_Store
+
+# phpunit itself is not needed
+phpunit.phar
+# local phpunit config
+/phpunit.xml
+
 # Yii2 specific
 /runtime/*
 /web/assets/*
-/vendor/
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# Docker volumes
+/docker/mysql/data/
+
+# Node modules
+/node_modules
+npm-debug.log
+yarn-debug.log
+yarn-error.log
 
 # IDE specific
-.idea/
 .vscode/
 *.swp
 *.swo
@@ -15,9 +55,6 @@
 
 # Docker specific
 docker-compose.override.yml
-
-# Composer
-composer.phar
 
 # Logs
 *.log

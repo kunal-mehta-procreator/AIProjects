@@ -2,14 +2,27 @@
     "name": "rajatbagree/admin-nav-project",
     "description": "Admin Navigation Project with Yii2",
     "type": "project",
-    "minimum-stability": "stable",
+    "minimum-stability": "dev",
+    "prefer-stable": true,
     "require": {
         "php": ">=7.4.0",
         "yiisoft/yii2": "~2.0.45",
-        "yiisoft/yii2-bootstrap5": "~2.0.2",
+        "yiisoft/yii2-bootstrap": "~2.0.0",
+        "yiisoft/yii2-bootstrap5": "~2.0.3",
         "yiisoft/yii2-debug": "~2.1.0",
         "yiisoft/yii2-gii": "~2.2.0",
-        "yiisoft/yii2-symfonymailer": "~2.0.3"
+        "yiisoft/yii2-symfonymailer": "~2.0.3",
+        "kartik-v/yii2-grid": "~3.5.0",
+        "kartik-v/yii2-krajee-base": "~3.0.0",
+        "kartik-v/yii2-bootstrap5-dropdown": "@stable",
+        "kartik-v/yii2-export": "~1.4.0",
+        "kartik-v/yii2-dialog": "@stable",
+        "kartik-v/yii2-editable": "@stable",
+        "npm-asset/bootstrap": "^5.2.0",
+        "npm-asset/jquery": "^3.6.0",
+        "npm-asset/popperjs--core": "^2.11.6",
+        "npm-asset/fortawesome--fontawesome-free": "^6.0.0",
+        "kartik-v/yii2-date-range": "@dev"
     },
     "require-dev": {
         "yiisoft/yii2-debug": "~2.1.0",
@@ -25,7 +38,10 @@
         "allow-plugins": {
             "yiisoft/yii2-composer": true
         },
-        "process-timeout": 1800
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        }
     },
     "scripts": {
         "post-install-cmd": [
@@ -52,4 +68,4 @@
             ]
         }
     }
-} 
+}

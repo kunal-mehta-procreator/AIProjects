@@ -1,0 +1,345 @@
+/* Custom Grid Styles */
+.custom-grid {
+    border: none;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.05);
+}
+
+/* Header Styles */
+.custom-header-row th {
+    background: #f9fafb !important;
+    padding: 12px 16px !important;
+    font-weight: 500 !important;
+    color: #111827 !important;
+    border-bottom: 1px solid #e5e7eb !important;
+    font-size: 0.875rem;
+}
+
+/* Cell Styles */
+.custom-cell, .grid-view .table td {
+    padding: 12px 16px !important;
+    color: #374151;
+    border: none !important;
+    border-bottom: 1px solid #f3f4f6 !important;
+    font-size: 0.875rem;
+}
+
+/* Status Badge */
+.status-badge {
+    display: inline-flex;
+    align-items: center;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 0.875rem;
+    background: #ecfdf5;
+    color: #059669;
+    font-weight: 500;
+}
+
+.status-badge .status-icon {
+    margin-right: 4px;
+    font-size: 12px;
+}
+
+/* Action Button */
+.more-actions-btn {
+    background: none;
+    border: none;
+    color: #6b7280;
+    cursor: pointer;
+    padding: 4px;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.more-actions-btn:hover {
+    background: #f3f4f6;
+    color: #374151;
+}
+
+.more-actions-btn svg {
+    width: 16px;
+    height: 16px;
+}
+
+/* Checkbox Styles */
+.custom-checkbox {
+    width: 16px;
+    height: 16px;
+    border: 2px solid #d1d5db;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.custom-checkbox:checked {
+    background-color: #2563eb;
+    border-color: #2563eb;
+}
+
+/* Grid View Overrides */
+.grid-view {
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-top: 20px;
+    overflow: hidden;
+}
+
+.grid-view .table {
+    margin-bottom: 0;
+    border-collapse: collapse;
+}
+
+.grid-view .table thead th {
+    background: #f9fafb;
+    border: none;
+    border-bottom: 1px solid #e5e7eb;
+    padding: 12px 16px;
+    font-weight: 500;
+    color: #111827;
+    font-size: 0.875rem;
+}
+
+.grid-view .table thead th a {
+    color: #111827;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.grid-view .table thead th a:after {
+    content: "↕";
+    opacity: 0.5;
+    font-size: 12px;
+}
+
+/* Pagination Styles */
+.pagination {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    margin: 16px 0;
+}
+
+.pagination > li > a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 32px;
+    height: 32px;
+    padding: 0 6px;
+    border-radius: 6px;
+    border: 1px solid #e5e7eb;
+    color: #374151;
+    font-size: 0.875rem;
+    text-decoration: none;
+}
+
+.pagination > li.active > a {
+    background: #2563eb;
+    color: white;
+    border-color: #2563eb;
+}
+
+.pagination > li > a:hover:not(.active) {
+    background: #f3f4f6;
+}
+
+/* Records per page dropdown */
+.per-page-dropdown {
+    padding: 6px 12px;
+    border: 1px solid #e5e7eb;
+    border-radius: 6px;
+    color: #374151;
+    background: white;
+    font-size: 0.875rem;
+}
+
+/* Footer area */
+.summary-text {
+    color: #6b7280;
+    font-size: 0.875rem;
+}
+
+/* Top Bar Filters */
+.grid-filters {
+    display: flex;
+    gap: 16px;
+    margin-bottom: 24px;
+    align-items: center;
+}
+
+.filter-dropdown {
+    position: relative;
+    min-width: 200px;
+}
+
+.filter-dropdown select {
+    width: 100%;
+    padding: 8px 12px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+    background: white;
+    appearance: none;
+}
+
+.search-box {
+    flex: 1;
+    position: relative;
+}
+
+.search-box input {
+    width: 100%;
+    padding: 8px 12px;
+    padding-left: 36px;
+    border: 1px solid #e0e0e0;
+    border-radius: 4px;
+}
+
+.search-box::before {
+    content: '🔍';
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #666;
+}
+
+.organization-index {
+    padding: 20px;
+}
+
+.organization-index h1 {
+    margin-bottom: 20px;
+}
+
+.grid-view .btn {
+    margin: 0 3px;
+}
+
+.grid-view .fas {
+    font-size: 0.9em;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .grid-view {
+        overflow-x: auto;
+    }
+    
+    .btn-sm {
+        padding: 0.2rem 0.4rem;
+    }
+}
+
+/* Card styles */
+.card {
+    border: none;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    margin-bottom: 1.5rem;
+}
+
+/* Table styles */
+.table th {
+    font-weight: 500;
+    color: #495057;
+    border-top: none;
+}
+
+.table td {
+    color: #212529;
+    vertical-align: middle;
+}
+
+.table tbody tr:hover {
+    background-color: #f8f9fa;
+}
+
+/* Form elements */
+.form-check-input {
+    border-color: #dee2e6;
+}
+
+.form-check-input:checked {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Status badge */
+.badge.bg-success-subtle {
+    background-color: #d1e7dd !important;
+    padding: 0.35rem 0.65rem;
+}
+
+/* Pagination customization */
+.pagination {
+    gap: 0.25rem;
+}
+
+.page-link {
+    border-radius: 0.375rem;
+    padding: 0.375rem 0.75rem;
+    color: #495057;
+    border: 1px solid #dee2e6;
+}
+
+.page-link:hover {
+    background-color: #e9ecef;
+    color: #0d6efd;
+}
+
+.page-item.active .page-link {
+    background-color: #0d6efd;
+    border-color: #0d6efd;
+}
+
+/* Dropdown menu */
+.dropdown-menu {
+    padding: 0.5rem 0;
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.15);
+    border-radius: 0.5rem;
+}
+
+.dropdown-item {
+    padding: 0.5rem 1rem;
+    color: #212529;
+}
+
+.dropdown-item:hover {
+    background-color: #f8f9fa;
+}
+
+/* Form select */
+.form-select-sm {
+    min-width: 150px;
+    background-color: #fff;
+}
+
+/* Card footer */
+.card-footer {
+    background-color: #fff;
+    border-top: 1px solid rgba(0,0,0,0.125);
+    padding: 1rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .card-footer {
+        flex-direction: column;
+        gap: 1rem;
+    }
+    
+    .card-footer > div {
+        width: 100%;
+    }
+    
+    .form-select-sm {
+        width: 100%;
+    }
+} 

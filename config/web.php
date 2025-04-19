@@ -1,6 +1,7 @@
 <?php
 
 $params = require __DIR__ . '/params.php';
+$db = require __DIR__ . '/db.php';
 
 $config = [
     'id' => 'basic',
@@ -10,9 +11,24 @@ $config = [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
     ],
+    'modules' => [
+        'gridview' => [
+            'class' => '\kartik\grid\Module',
+            'bsVersion' => '5.x',
+        ],
+        'dialog' => [
+            'class' => '\kartik\dialog\Module',
+            'bsVersion' => '5.x',
+        ],
+    ],
+    'container' => [
+        'definitions' => [
+            \yii\widgets\LinkPager::class => \yii\bootstrap5\LinkPager::class,
+        ],
+    ],
     'components' => [
         'request' => [
-            'cookieValidationKey' => 'your-secret-key-here',
+            'cookieValidationKey' => 'your-secret-key',
         ],
         'cache' => [
             'class' => 'yii\caching\FileCache',
@@ -38,24 +54,32 @@ $config = [
                 ],
             ],
         ],
-        'db' => [
-            'class' => 'yii\db\Connection',
-            'dsn' => 'mysql:host=localhost;dbname=yii2basic',
-            'username' => 'root',
-            'password' => '',
-            'charset' => 'utf8',
+        'db' => $db,
+        'assetManager' => [
+            'bundles' => [
+                'yii\bootstrap5\BootstrapAsset' => [
+                    'css' => [],
+                ],
+                'yii\bootstrap5\BootstrapPluginAsset' => [
+                    'js' => [],
+                ],
+                'kartik\grid\GridViewAsset' => [
+                    'depends' => [
+                        'yii\web\YiiAsset',
+                        'yii\bootstrap5\BootstrapAsset',
+                        'yii\bootstrap5\BootstrapPluginAsset',
+                    ],
+                ],
+            ],
+            'appendTimestamp' => true,
+            'linkAssets' => true,
+            'forceCopy' => YII_DEBUG,
         ],
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
             'rules' => [
-                'admin/<controller:\w+>/<action:\w+>' => 'admin/<controller>/<action>',
             ],
-        ],
-    ],
-    'modules' => [
-        'admin' => [
-            'class' => 'app\modules\admin\Module',
         ],
     ],
     'params' => $params,
@@ -66,13 +90,11 @@ if (YII_ENV_DEV) {
     $config['bootstrap'][] = 'debug';
     $config['modules']['debug'] = [
         'class' => 'yii\debug\Module',
-        'allowedIPs' => ['127.0.0.1', '::1', '192.168.65.1'],
     ];
 
     $config['bootstrap'][] = 'gii';
     $config['modules']['gii'] = [
         'class' => 'yii\gii\Module',
-        'allowedIPs' => ['127.0.0.1', '::1', '192.168.65.1'],
     ];
 }
 

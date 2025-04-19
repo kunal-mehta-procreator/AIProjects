@@ -1,0 +1,44 @@
+{
+    "data": [
+        {
+            "id": "20000829",
+            "name": "Alumni Management",
+            "organization_unit_type": "Faculty",
+            "parent": "Campus",
+            "institute_name": "Administrative",
+            "status": "Active"
+        },
+        {
+            "id": "20000829",
+            "name": "Campus567",
+            "organization_unit_type": "Administration",
+            "parent": "Institute",
+            "institute_name": "Academic",
+            "status": "Active"
+        },
+        {
+            "id": "20000891",
+            "name": "Committee",
+            "organization_unit_type": "Campus",
+            "parent": "Library",
+            "institute_name": "Academic",
+            "status": "Active"
+        },
+        {
+            "id": "47903200",
+            "name": "Department578",
+            "organization_unit_type": "Branch",
+            "parent": "Hostel",
+            "institute_name": "National Institute of Technology",
+            "status": "Active"
+        },
+        {
+            "id": "38806470",
+            "name": "Alumni8978",
+            "organization_unit_type": "Hostel",
+            "parent": "Institution",
+            "institute_name": "Administrative",
+            "status": "Active"
+        }
+    ]
+} 
